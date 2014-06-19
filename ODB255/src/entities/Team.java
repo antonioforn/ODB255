@@ -3,14 +3,16 @@
 package entities;
 
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Team {
     @Id String teamName;
-    @ManyToMany (mappedBy="teams")
+    @ManyToMany (mappedBy="teams",fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<Cup> cups;
 
     public Team() {
