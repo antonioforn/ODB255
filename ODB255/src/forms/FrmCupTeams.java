@@ -159,6 +159,7 @@ public class FrmCupTeams extends javax.swing.JFrame {
         
         em.getTransaction().begin();
         t.getCups().add(c);
+        c.getTeams().add(t);
         //em.flush();
         em.getTransaction().commit();
         showTeamsCup();

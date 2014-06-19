@@ -17,7 +17,7 @@ public class Cup {
     @Id @Column (name= "championship") 
     private String championship;
     
-    @ManyToMany (fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @ManyToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name="CUP_TEAM",
         joinColumns= 
                 @JoinColumn(name="C", referencedColumnName="championship"),

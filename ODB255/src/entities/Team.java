@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Team {
     @Id String teamName;
-    @ManyToMany (mappedBy="teams",fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @ManyToMany (mappedBy="teams",fetch = FetchType.EAGER)
     private Set<Cup> cups;
 
     public Team() {
