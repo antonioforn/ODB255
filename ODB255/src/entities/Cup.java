@@ -22,5 +22,30 @@ public class Cup {
         inverseJoinColumns=
                 @JoinColumn(name="TeamName", referencedColumnName="teamName")            
     ) private Set<Team> teams;
+
+    public Cup() {
+    }
+
+    public Cup(String championship) {
+        this.championship = championship;
+    }
+
+    public String getChampionship() {
+        return championship;
+    }
+
+    public void setChampionship(String championship) {
+        this.championship = championship;
+    }
+
+    public Set<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(Set<Team> teams) {
+        this.teams = teams;
+    }
+    
+    
     
 }
